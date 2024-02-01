@@ -15,3 +15,7 @@ def juega(tablero, columna, valor_ficha):
             c[indice] = valor_ficha
             break
         indice -= 1
+
+def esta_llena(tablero, columna):
+    c = tablero[columna]
+    return 0 not in c
