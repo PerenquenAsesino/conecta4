@@ -43,4 +43,23 @@ def victoria(tablero, ficha):
         if victoria_vertical_col(tablero, num_col, ficha):
             return True
     
+    num_filas = len(tablero[0])
+    for num_fila in range(num_filas):
+        if victoria_horizontal_fila(tablero, num_fila, ficha):
+            return True
+
     return False
+
+def victoria_horizontal_fila(tablero, pos_fila, ficha):
+    contador_iguales = 0
+
+    for columna in tablero:
+        if columna[pos_fila] == ficha:
+            contador_iguales += 1
+        else:
+            contador_iguales = 0
+
+        if contador_iguales == 4:
+            return True
+    return False
+        
